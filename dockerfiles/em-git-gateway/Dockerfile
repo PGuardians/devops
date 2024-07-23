@@ -1,5 +1,5 @@
 FROM emindsguardians/talentwaze:node
 
-ADD em-git-gateway /em-git-gateway
-WORKDIR em-git-gateway
+ADD git-gateway /git-gateway
+WORKDIR git-gateway
 RUN npm install --force
