@@ -1,5 +1,5 @@
 FROM emindsguardians/talentwaze:node
 
-ADD em-rendering-service /em-rendering-service
-WORKDIR em-rendering-service
+ADD rendering-service /rendering-service
+WORKDIR rendering-service
 RUN npm install --force
