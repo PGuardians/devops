@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
       - name: em-iam-service
-        image: emindsguardians/em-iam-service:latest
+        image: RRR/rrr:ttt
         command: [ "npm", "run", "server"]
         ports:
-        - containerPort: 5000
+        - containerPort: 8282
 ---
 apiVersion: v1
 kind: Service
@@ -31,5 +31,5 @@ spec:
     app: em-iam-service
   ports:
     - protocol: TCP
-      port: 5000
-      nodePort: 30011
+      port: 8282
+      nodePort: 30043
