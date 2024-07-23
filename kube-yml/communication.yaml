@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: em-git-communication
-        image: emindsguardians/em-git-communication:latest
+        image: RRR/rrr:ttt
         command: [ "npm", "run", "server"]
         ports:
         - containerPort: 5000
@@ -32,4 +32,4 @@ spec:
   ports:
     - protocol: TCP
       port: 5000
-      nodePort: 30011
+      nodePort: 30042
