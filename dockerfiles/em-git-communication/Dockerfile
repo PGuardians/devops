@@ -1,5 +1,5 @@
 FROM emindsguardians/talentwaze:node
 
-ADD em-git-communication /em-git-communication
-WORKDIR em-git-communication
+ADD git-communication /git-communication
+WORKDIR git-communication
 RUN npm install --force
