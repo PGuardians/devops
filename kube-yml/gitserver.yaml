@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: git-serverown
+  labels:
+    app: git-serverown
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: git-serverown
+  template:
+    metadata:
+      labels:
+        app: git-serverown
+    spec:
+      containers:
+        - name: git-server1
+          image:  RRR/rrr:ttt
+          command: ["sh", "-c", "/app/script.sh"]
+          ports:
+            - containerPort: 8082
+          volumeMounts:
+          - mountPath: /mnt/git
+            name: git-data
+      volumes:
+      - name: git-data
+        persistentVolumeClaim:
+          claimName: gitown-pv-volume
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: git-serverown
+  labels:
+    app: git-serverown
+spec:
+  type: NodePort
+  ports:
+    - name: git-java
+      protocol: TCP
+      port: 8082
+    - name: git-server
+      protocol: TCP
+      port: 3000
+  selector:
+    app: git-serverown
