@@ -14,6 +14,8 @@ spec:
       labels:
         app: git-serverown
     spec:
+      nodeSelector:
+        node-type: k8sworker
       containers:
         - name: git-server1
           image:  RRR/rrr:ttt
