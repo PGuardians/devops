@@ -20,6 +20,8 @@ spec:
           command: ["sh", "-c", "/app/script.sh"]
           ports:
             - containerPort: 8082
+      nodeSelector:
+          node-type: k8sworker
           volumeMounts:
           - mountPath: /mnt/git
             name: git-data
