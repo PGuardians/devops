@@ -25,11 +25,11 @@ spec:
           readinessProbe:
           httpGet:
             path: /
-            port: 8484
+            port: 8080
           livenessProbe:
             httpGet:
               path: /
-              port: 8484
+              port: 8080
             initialDelaySeconds: 30
             periodSeconds: 10
             timeoutSeconds: 5
