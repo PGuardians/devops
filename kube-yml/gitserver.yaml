@@ -22,23 +22,6 @@ spec:
           command: ["sh", "-c", "/app/script.sh"]
           ports:
             - containerPort: 8082
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8082
-            httpGet:
-              path: /
-              port: 3000
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8082
-            httpGet:
-              path: /
-              port: 3000
-            initialDelaySeconds: 30
-            periodSeconds: 10
-            timeoutSeconds: 5
           volumeMounts:
           - mountPath: /mnt/git
             name: git-data
