@@ -15,7 +15,8 @@ spec:
         app: git-serverown
     spec:
       nodeSelector:
-        node-type: k8sworker
+        kubernetes.io/hostname: k8sworker          
+#        node-type: k8sworker
       containers:
         - name: git-server1
           image:  RRR/rrr:ttt
