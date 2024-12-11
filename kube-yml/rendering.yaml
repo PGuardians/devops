@@ -43,4 +43,3 @@ spec:
   ports:
     - protocol: TCP
       port: 8484
-      nodePort: 30044
