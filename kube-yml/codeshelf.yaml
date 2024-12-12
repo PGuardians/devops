@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: git-serverwork
+  name: git-serverwork-dev
   labels:
-    app: git-serverwork
+    app: git-serverwork-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: git-serverwork
+      app: git-serverwork-dev
   template:
     metadata:
       labels:
-        app: git-serverwork
+        app: git-serverwork-dev
     spec:
       nodeSelector:
         kubernetes.io/hostname: k8sworker      
@@ -40,7 +40,7 @@ kind: Service
 metadata:
   name: git-serverwork
   labels:
-    app: git-serverwork
+    app: git-serverwork-dev
 spec:
   type: NodePort
   ports:
@@ -48,4 +48,4 @@ spec:
       protocol: TCP
       port: 8080
   selector:
-    app: git-serverwork
+    app: git-serverwork-dev
