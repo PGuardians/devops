@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: git-serverown
+  name: git-serverown-dev
   labels:
-    app: git-serverown
+    app: git-serverown-dev
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: git-serverown
+      app: git-serverown-dev
   template:
     metadata:
       labels:
-        app: git-serverown
+        app: git-serverown-dev
     spec:
       nodeSelector:
         kubernetes.io/hostname: k8sworker          
@@ -40,14 +40,14 @@ spec:
       volumes:
       - name: git-data
         persistentVolumeClaim:
-          claimName: gitown-pv-volume
+          claimName: gitown-pv-volume-dev
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: git-serverown
   labels:
-    app: git-serverown
+    app: git-serverown-dev
 spec:
   type: NodePort
   ports:
@@ -58,4 +58,4 @@ spec:
       protocol: TCP
       port: 3000
   selector:
-    app: git-serverown
+    app: git-serverown-dev
