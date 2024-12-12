@@ -40,7 +40,7 @@ spec:
       volumes:
       - name: git-data
         persistentVolumeClaim:
-          claimName: gitown-pv-volume
+          claimName: gitown-pv-volume-dev
 ---
 apiVersion: v1
 kind: Service
